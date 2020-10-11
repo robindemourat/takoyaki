@@ -26,7 +26,13 @@ module.exports = {
       },
       {
         test: /\.woff2?$/,
-        use: 'file-loader'
+        use: [{
+          loader: 'file-loader',
+          options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+          }
+      }]
       },
       {
         test: /\.csv$/,

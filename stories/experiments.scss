@@ -1,0 +1,234 @@
+
+
+/**
+ * TEMPLATE VARIABLES
+ */ 
+ $family-sans-serif: 'Helvetica', sans-serif;
+
+ // #eeb9bc espèce de saumon
+ $red : #f7323f;
+ $background: #f2f2f2;
+ $text: #181c1c;
+
+//  $primary: #181c1c;
+$primary: $text;
+//  $primary: #2f4858;
+//  $primary: #f7323f;
+//  $info: #444444;
+ $info:#7F7F7F; 
+
+ /*
+ 
+ $primary: $turquoise
+ $link: $blue
+ $info: $cyan
+ $success: $green
+ $warning: $yellow
+ $danger: $red
+ $dark: $grey-darker
+ $text: $grey-dark
+ $background
+  */
+
+/**
+ * Loading Bulma initial variables.
+ */
+ @import '~bulma/sass/utilities/initial-variables';
+ /**
+  * Loading libraries.
+  */
+ @import '~bulma';
+ @import '~react-select/scss/default.scss';
+
+/**
+DOC
+
+Layout : 1 ou 2 colonnes
+
+Base : 18px
+baseline 26px
+
+TODO
+aligner colonne de gauche du main sur colonne de gauche du nav
+ */
+
+
+/**
+ * NEW VARIABLES
+ */ 
+
+ $bold: 600;
+ $black: 800;
+ $size-8 : 0.5rem;
+ $size-7bis : 0.77rem;
+
+ $gutter-small : 0.25rem;
+ $gutter-medium : 0.50rem;
+
+
+ /**
+  * ROOT STYLING
+  */
+:root{
+font-size: 18px;
+line-height: 26px;
+text-rendering: optimizeLegibility;
+}
+
+
+/**
+ * OVERRIDE TO EXISTING
+ */
+ .brand{
+    font-size: $size-5;
+    font-weight: $bold;
+    color:  $red;
+    cursor: pointer;
+}
+
+.breadcrumb-item{
+  font-size: $size-5;
+}
+
+.button{
+   justify-content: flex-start;
+   height: $size-3;
+   min-width: $size-6 * 10;
+//    max-width: $size-6 * 10;
+   font-size: $size-7;
+   border-radius: 0;
+   align-items: flex-start;
+
+
+flex-flow: column nowrap;
+
+justify-content: center;
+   border: none;
+   &:active{
+       border: none;
+   }
+
+   background: white;
+   border: 1px solid $background;
+
+   padding: 0;
+   padding-left: $gutter-medium;
+   padding-right: $gutter-medium;
+//    height: $size-3;
+
+
+   &:hover{
+       background: rgba(244,244,244, 0.5);
+       border: 1px solid $background;
+
+       transition : background .5s ease;
+   }
+   color: $info;
+
+   &.is-primary{
+    font-size: $size-6;
+    font-weight: $bold;
+        &.is-bordered{
+            border: 1px solid $background;
+        }
+   }
+}
+
+.column{
+    box-sizing: border-box;
+}
+
+.drop-zone-content{
+    position : absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    background: $background;
+    overflow :hidden;
+    code{
+        z-index: 2;
+    }
+}
+
+.tech-info{
+    font-size: $size-7bis;
+    font-family: $family-monospace;
+    background: $background;
+    z-index: 3;
+    color: $red;
+}
+
+.table{
+    overflow: auto;
+    max-width: 100%;
+
+    thead{
+        font-weight: $bold;
+    }
+
+}
+
+.td{
+    width: $size-6 * 10;
+}
+
+.content{
+    .is-size-small{
+        font-size: $size-7;
+    }
+}
+
+.card-footer-item{
+    font-size: $size-7;
+    height: 2.5rem;
+}
+
+.table{
+    font-family: $family-monospace;
+    font-size: $size-7bis;
+}
+
+/**
+ * ADDENDA
+ */
+
+ .tech-desc{
+    font-family: $family-monospace;
+    font-size: $size-7bis;
+}
+
+.button-container{
+    margin-bottom:  $gutter-small;
+    // border-bottom: 1px solid $text;
+}
+
+.buttons{
+
+    display: flex;
+    flex-direction: row;
+
+    flex-wrap: nowrap;
+    .button{
+        min-width: unset;
+        max-height: unset;
+        flex: 1;
+    }
+}
+
+.left-pannel{
+    padding-right: $gutter-medium;
+    padding-left: 5rem;
+    text-align: right;
+}
+
+.right-pannel{
+    background: $background;
+    padding-left: $gutter-medium;
+    padding-right: 7rem;
+    // padding-right: 12rem;
+}
